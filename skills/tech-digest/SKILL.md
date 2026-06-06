@@ -47,7 +47,7 @@ Recent activity outranks static dependencies (you touch code daily; a library re
 
 1. **Scope.** If the user named specific topics, restrict to those. Otherwise cover all eight.
 2. **Gather context.** Read the context sources (see "Context personalization"): repo stack + key libraries, last ~14 days of git activity, and memory `project_*` / `user_profile.md`. Use it to decide which of the 8 topics to keep/rank and to derive ≤ 3 narrow queries for the 9th section. Skip silently if no context is available.
-3. **Search.** Run one `web_search` per topic (or per narrowed topic), plus the ≤ 3 context queries. Use recency-biased queries — include the current year and words like "release", "new", "latest", "changelog", "2026". Examples:
+3. **Search.** Run one **`WebSearch`** call per topic (or per narrowed topic), plus the ≤ 3 context queries. Use recency-biased queries — include the current year and words like "release", "new", "latest", "changelog", "2026". Examples:
    - `Kotlin release 2026`
    - `Jetpack Compose latest 2026`
    - `Ktor new version 2026`
@@ -58,7 +58,9 @@ Recent activity outranks static dependencies (you touch code daily; a library re
    - `software architecture patterns 2026`
    - context examples: `Exposed ORM Kotlin release 2026`, `Flyway PostgreSQL 2026`, `<active-task-topic> 2026`
 4. **Filter.** Keep only genuinely recent and substantive items (prefer last 1–2 months). Drop SEO listicles, reposts, and low-signal aggregators. Favor primary sources: official blogs (Kotlin, Android Developers, Anthropic), GitHub releases, KEEP, peer writeups with depth. For the 9th section, drop anything already shown under the 8 topics.
-5. **Verify links.** Cite real URLs returned by search. If unsure a link is valid, `web_fetch` to confirm before including. Never invent URLs.
+5. **Verify links.** Every item MUST carry a real URL taken verbatim from the `WebSearch` results — copy the exact `url` field, do not shorten or guess it. If unsure a link is valid, use **`WebFetch`** to confirm before including. Never invent URLs. If an item has no usable source URL, drop the item rather than printing it without a link.
+
+> Tool names are case-sensitive: the search tool is `WebSearch` and the fetch tool is `WebFetch`. There is no `web_search` / `web_fetch`.
 6. **Compose digest.** Follow the output format below.
 
 ## Output format
