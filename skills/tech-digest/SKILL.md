@@ -83,6 +83,13 @@ Markdown directly in chat (not a file unless asked). Structure:
 
 ## 🎯 Під твій контекст
 - **<заголовок>** — чому релевантно саме твоїй задачі/залежності. [джерело](url)
+
+## 🔗 Посилання
+**Kotlin**
+- <заголовок>: https://full/verbatim/url
+**Ktor**
+- <заголовок>: https://full/verbatim/url
+...one group per topic that has items, every item listed as a bare full URL...
 ```
 
 Rules:
@@ -90,9 +97,10 @@ Rules:
 - Only include a topic heading if there's at least one fresh item for it. Skip empty topics silently.
 - 1–4 items per topic. Quality over volume.
 - Each item: bold title, one sentence of why it matters (Danylo's stack context — Clean Architecture, Koin, Coroutines, бот на Kotlin/Ktor), then a working link.
-- `## 🎯 Під твій контекст` is the last section before the final line: 2–4 narrow items tied to the detected stack/tasks, none duplicating the 8 topics. Omit the whole section if context yielded nothing fresh.
-- Keep the whole digest scannable — aim for one to two screens.
-- End with one optional line: «🔎 Що варто глибше копнути:» + the single most relevant item for Danylo's current work (Spovishun bot, KMP, agentic AI workflow), if one stands out. Skip if nothing fits.
+- `## 🎯 Під твій контекст` is the last topic section: 2–4 narrow items tied to the detected stack/tasks, none duplicating the 8 topics. Omit the whole section if context yielded nothing fresh.
+- **`## 🔗 Посилання` is mandatory and always last (after the «🔎 копнути» line).** It re-lists every item from the digest as a bare full URL — not a markdown `[text](url)` link — grouped under the same topic headings, in the form `- <заголовок>: https://full/url`. The URL must be the exact verbatim `url` from the `WebSearch` results (same one used inline above). Rationale: many terminal renderers don't make `[джерело](url)` clickable, so the plain-URL block guarantees copy-pasteable links. Never omit this section; never abbreviate or wrap the URLs.
+- Keep the whole digest scannable — aim for one to two screens (the `🔗 Посилання` block doesn't count toward that budget).
+- End the prose part with one optional line: «🔎 Що варто глибше копнути:» + the single most relevant item for Danylo's current work (Spovishun bot, KMP, agentic AI workflow), if one stands out. Skip if nothing fits. The `🔗 Посилання` block still follows it.
 - Respect copyright: paraphrase, never quote source text beyond a few words.
 
 ## Notes
