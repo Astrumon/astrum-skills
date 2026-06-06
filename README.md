@@ -21,7 +21,7 @@ cd astrum-skills
 **Windows (PowerShell):**
 
 ```powershell
-./install.ps1          # symlink (needs Developer Mode or admin)
+./install.ps1          # directory junction (no admin / Developer Mode needed)
 ./install.ps1 -Copy    # copy instead
 ```
 
@@ -35,10 +35,10 @@ chmod +x install.sh    # first time only
 
 Both scripts link each folder under `skills/` into `~/.claude/skills/`.
 
-- **Symlink mode (default)** — single source of truth: edits in this repo are picked up
-  by Claude Code on the next session. On Windows this needs **Developer Mode** or an
-  elevated shell (the `.ps1` falls back to copy automatically if not permitted); on Unix
-  no elevation is required.
+- **Link mode (default)** — single source of truth: edits in this repo are picked up by
+  Claude Code on the next session. On Windows the `.ps1` uses a **directory junction**
+  (no admin rights or Developer Mode needed; works across drives) and falls back to copy
+  only if that fails. On Unix the `.sh` uses a symlink, which needs no elevation either.
 - **Copy mode** — pass `-Copy` / `--copy`. Re-run install after editing a skill to
   propagate changes.
 

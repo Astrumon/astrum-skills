@@ -3,17 +3,17 @@
     Installs the Astrum custom skills into the user-global Claude Code skills dir.
 
 .DESCRIPTION
-    For every skill folder under .\skills, creates a link at
+    For every skill folder under .\skills, creates a directory junction at
     ~/.claude/skills/<name> pointing back to this repo, so edits in the repo
     are picked up by Claude Code on the next session start.
 
-    Symlinks are preferred (single source of truth). They require either
-    Windows Developer Mode or an elevated shell. If symlink creation fails,
-    the script falls back to copying the folder and warns you that future
-    repo edits won't auto-propagate until you re-run install.
+    Directory junctions need NO admin rights and NO Developer Mode (unlike
+    symlinks), and work across drives. If junction creation ever fails, the
+    script falls back to copying the folder and warns you that future repo
+    edits won't auto-propagate until you re-run install.
 
 .PARAMETER Copy
-    Force copy mode instead of symlinks.
+    Force copy mode instead of junctions.
 
 .EXAMPLE
     ./install.ps1
@@ -53,12 +53,12 @@ foreach ($skill in $skills) {
     $linked = $false
     if (-not $Copy) {
         try {
-            New-Item -ItemType SymbolicLink -Path $target -Target $skill.FullName -ErrorAction Stop | Out-Null
+            New-Item -ItemType Junction -Path $target -Target $skill.FullName -ErrorAction Stop | Out-Null
             $linked = $true
             Write-Host "linked  $($skill.Name) -> $($skill.FullName)" -ForegroundColor Green
         }
         catch {
-            Write-Warning "Symlink failed for $($skill.Name) (need Developer Mode or admin). Falling back to copy."
+            Write-Warning "Junction failed for $($skill.Name): $($_.Exception.Message). Falling back to copy."
         }
     }
 
