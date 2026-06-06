@@ -1,0 +1,9 @@
+# OS / editor
+Thumbs.db
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Packaged skill bundles (commit the unzipped SKILL.md instead)
+*.skill
