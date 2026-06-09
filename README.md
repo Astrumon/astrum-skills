@@ -12,6 +12,11 @@ every project, independent of any project-specific skill set (e.g. `spovishun-sk
 | [`tech-digest`](skills/tech-digest/SKILL.md) | Live web-search digest of the latest Android/Kotlin/Ktor/KMP/AI/Claude news, plus context-aware picks based on the current repo stack, recent git activity, and memory files. |
 | [`explain-code`](skills/explain-code/SKILL.md) | Explains a file, function, PR, or diff with a layered walkthrough (simple → advanced), an ASCII flow diagram, and Feynman-style gap-checking. Adapts to the current project's architecture; read-only. |
 | [`mentor`](skills/mentor/SKILL.md) | Mentor/teacher that helps you learn and understand any topic (technical lean) — gist first, deepens or guides Socratically on demand, always ends with a recall check. Read-only on your code; study files only on request. |
+| [`grill-me`](skills/grill-me/SKILL.md) | Interviews you relentlessly about a plan or design, walking down each branch of the decision tree one question at a time with a recommended answer for each — to stress-test a plan before implementation. _Not my skill — see [Credits](#credits)._ |
+
+## Credits
+
+- [`grill-me`](skills/grill-me/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/grill-me/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Adapted here only to respond in Ukrainian.
 
 ## Install
 
