@@ -70,3 +70,8 @@ astrum-skills/
 
 > Each skill folder must contain a `SKILL.md` directly — Claude Code does not read
 > packaged `.skill` archives. Unzip any `.skill` bundle before committing.
+
+## License
+
+[MIT](LICENSE) © Astrumon — except for third-party skills, which keep their
+original licenses (see [Credits](#credits) and [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md)).
