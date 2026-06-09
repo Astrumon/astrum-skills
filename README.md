@@ -16,7 +16,7 @@ every project, independent of any project-specific skill set (e.g. `spovishun-sk
 
 ## Credits
 
-- [`grill-me`](skills/grill-me/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/grill-me/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Adapted here only to respond in Ukrainian.
+- [`grill-me`](skills/grill-me/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/grill-me/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Licensed under MIT; adapted here only to respond in Ukrainian. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
 
 ## Install
 
