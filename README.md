@@ -13,6 +13,30 @@ every project, independent of any project-specific skill set (e.g. `spovishun-sk
 | [`explain-code`](skills/explain-code/SKILL.md) | Explains a file, function, PR, or diff with a layered walkthrough (simple → advanced), an ASCII flow diagram, and Feynman-style gap-checking. Adapts to the current project's architecture; read-only. |
 | [`mentor`](skills/mentor/SKILL.md) | Mentor/teacher that helps you learn and understand any topic (technical lean) — gist first, deepens or guides Socratically on demand, always ends with a recall check. Read-only on your code; study files only on request. |
 | [`grill-me`](skills/grill-me/SKILL.md) | Interviews you relentlessly about a plan or design, walking down each branch of the decision tree one question at a time with a recommended answer for each — to stress-test a plan before implementation. _Not my skill — see [Credits](#credits)._ |
+| [`create-new-project`](skills/create-new-project/SKILL.md) | Bootstraps a new project end-to-end: duplicates the Notion project template, extracts anchor IDs, writes `spovishun-skills.config.yaml`, installs the `.claude/` stack, fills the root page, sets up git (`main`/`develop`) with optional GitHub remote, and validates with `doctor`. **Requires [`spovishun-skills`](https://www.npmjs.com/package/spovishun-skills)** — see [create-new-project requirements](#create-new-project-requirements). |
+
+## create-new-project requirements
+
+Unlike the other skills here, `create-new-project` is an orchestration skill — it drives
+external tooling and only works when its environment is in place:
+
+- **[`spovishun-skills`](https://www.npmjs.com/package/spovishun-skills) (npm)** — the skill
+  runs `npx spovishun-skills install / sync / doctor` and the Notion CLI scripts the plugin
+  generates under `.claude/scripts/notion/`. Node.js 18+ required.
+- **Notion MCP connector** — template duplication, ID extraction, and root-page editing go
+  through Notion MCP tools (`notion-fetch`, `notion-duplicate-page`, `notion-update-page`,
+  `notion-search`).
+- **A "TEMPLATE — New Project" page** in your Notion Projects database — the duplicatable
+  skeleton (Board + Tasks DB, Documentation with category pages, Epics DB) that the skill
+  clones for each new project. The skill finds it by title or accepts a URL.
+- **`NOTION_TOKEN`** — a Notion internal-integration secret. The skill **never touches your
+  `.env`**: it pauses mid-flow and asks you to create `.env` and export the variable yourself,
+  then verifies only that the env var is set.
+- **`gh` CLI** (optional) — only if you want the skill to create a private GitHub remote.
+
+Flow in one line: duplicate template → extract anchor IDs → write config → *(you set up the
+token)* → install `.claude/` stack → fill root page + archive placeholders → `CLAUDE.md`
+skeleton → `git init` + `main`/`develop` (+ optional GitHub) → `doctor` must pass.
 
 ## Credits
 
