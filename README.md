@@ -14,6 +14,7 @@ every project, independent of any project-specific skill set (e.g. `spovishun-sk
 | [`mentor`](skills/mentor/SKILL.md) | Mentor/teacher that helps you learn and understand any topic (technical lean) — gist first, deepens or guides Socratically on demand, always ends with a recall check. Read-only on your code; study files only on request. |
 | [`setup-spovishun-config`](skills/setup-spovishun-config/SKILL.md) | Configures a cloned [spovishun-skills](https://www.npmjs.com/package/spovishun-skills) project's gitignored `spovishun-skills.config.yaml` by harvesting the project's Notion ids with its `bootstrap-config.js`, sourcing the non-notion fields from the committed example or the `init` wizard, and verifying with `doctor`. |
 | [`grill-me`](skills/grill-me/SKILL.md) | Interviews you relentlessly about a plan or design, walking down each branch of the decision tree one question at a time with a recommended answer for each — to stress-test a plan before implementation. _Not my skill — see [Credits](#credits)._ |
+| [`teach`](skills/teach/SKILL.md) | Teaches you a topic over multiple sessions in a stateful workspace — grounds every lesson in your mission, tracks progress with learning records and a glossary, and produces beautiful HTML lessons + quick-reference docs pitched at your zone of proximal development. Invoke with `/teach`. _Not my skill — see [Credits](#credits)._ |
 | [`create-new-project`](skills/create-new-project/SKILL.md) | Bootstraps a new project end-to-end: duplicates the Notion project template, extracts anchor IDs, writes `spovishun-skills.config.yaml`, installs the `.claude/` stack, fills the root page, sets up git (`main`/`develop`) with optional GitHub remote, and validates with `doctor`. **Requires [`spovishun-skills`](https://www.npmjs.com/package/spovishun-skills)** — see [create-new-project requirements](#create-new-project-requirements). |
 
 ## create-new-project requirements
@@ -42,6 +43,7 @@ skeleton → `git init` + `main`/`develop` (+ optional GitHub) → `doctor` must
 ## Credits
 
 - [`grill-me`](skills/grill-me/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/grill-me/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Licensed under MIT; adapted here only to respond in Ukrainian. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
+- [`teach`](skills/teach/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/teach/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). Licensed under MIT; adapted here to teach in Ukrainian (see the `## Language` section in its `SKILL.md`). Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
 
 ## Install
 
