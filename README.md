@@ -17,6 +17,28 @@ every project, independent of any project-specific skill set (e.g. `spovishun-sk
 | [`teach`](skills/teach/SKILL.md) | Teaches you a topic over multiple sessions in a stateful workspace — grounds every lesson in your mission, tracks progress with learning records and a glossary, and produces beautiful HTML lessons + quick-reference docs pitched at your zone of proximal development. Invoke with `/teach`. _Not my skill — see [Credits](#credits)._ |
 | [`create-new-project`](skills/create-new-project/SKILL.md) | Bootstraps a new project end-to-end: duplicates the Notion project template, extracts anchor IDs, writes `spovishun-skills.config.yaml`, installs the `.claude/` stack, fills the root page, sets up git (`main`/`develop`) with optional GitHub remote, and validates with `doctor`. **Requires [`spovishun-skills`](https://www.npmjs.com/package/spovishun-skills)** — see [create-new-project requirements](#create-new-project-requirements). |
 | [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review/SKILL.md) | An unusually strict maintainability review — hunts "code-judo" restructurings, enforces the 1k-line rule, and flags spaghetti conditionals, boundary leaks, and needless abstractions. Invoke explicitly with `/thermo-nuclear-code-quality-review`. _Not my skill — see [Credits](#credits)._ |
+| [`wayfinder`](skills/wayfinder/SKILL.md) | Plans an effort too big for one session as a **map** of decision tickets on the project's issue tracker, then resolves them one per session until the way to the destination is clear. Auto-detects the tracker — see [wayfinder trackers](#wayfinder-trackers). Invoke explicitly with `/wayfinder`. _Not my skill — see [Credits](#credits)._ |
+| [`research`](skills/research/SKILL.md) | Delegates a question to a background agent that reads **primary sources** only and captures cited findings as a Markdown file in the repo. Used standalone or by `wayfinder` for `research` tickets. _Not my skill — see [Credits](#credits)._ |
+| [`prototype`](skills/prototype/SKILL.md) | Builds throwaway code that answers one design question — an interactive TUI for a state model, or several radically different UI variants behind a switcher. Used standalone or by `wayfinder` for `prototype` tickets. _Not my skill — see [Credits](#credits)._ |
+| [`domain-modeling`](skills/domain-modeling/SKILL.md) | Sharpens the project's ubiquitous language while you design — challenges fuzzy terms, keeps `CONTEXT.md` current, and offers an ADR only when a decision is hard to reverse, surprising, and a real trade-off. _Not my skill — see [Credits](#credits)._ |
+
+## wayfinder trackers
+
+`wayfinder` keeps its map and tickets in whatever tracker the project already has. The tracker is
+resolved once, at the top of every session, first match wins:
+
+1. **The map's own Notes** — a map handed to you never migrates trackers.
+2. **[Notion](skills/wayfinder/trackers/notion.md)** — `spovishun-skills.config.yaml` with a
+   `notion.database_id`, plus the Notion MCP connector. Map and tickets are pages in the project's
+   **Tasks** DB, prefixed `WF · <effort> ·`; the property mapping (status / assignee / relations)
+   is discovered from the DB schema and cached in the map's Notes.
+3. **[GitHub Issues](skills/wayfinder/trackers/github.md)** — authenticated `gh` and a GitHub
+   remote. Uses sub-issues and native issue dependencies, so the frontier renders in GitHub's UI.
+4. **[Local markdown](skills/wayfinder/trackers/local.md)** — always available:
+   `.scratch/<effort>/map.md` plus one file per ticket. No external dependency, no team-visible UI.
+
+`wayfinder` delegates ticket work to `grill-me` (grilling tickets), `domain-modeling`, `research`,
+and `prototype` — all four live in this repo, so no extra setup is needed.
 
 ## create-new-project requirements
 
@@ -45,6 +67,10 @@ skeleton → `git init` + `main`/`develop` (+ optional GitHub) → `doctor` must
 
 - [`grill-me`](skills/grill-me/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/grill-me/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Licensed under MIT; adapted here only to respond in Ukrainian. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
 - [`teach`](skills/teach/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/productivity/teach/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). Licensed under MIT; adapted here to teach in Ukrainian (see the `## Language` section in its `SKILL.md`). Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
+- [`wayfinder`](skills/wayfinder/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/engineering/wayfinder/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md). Licensed under MIT; adapted here to communicate in Ukrainian, to resolve the issue tracker itself (Notion / GitHub / local markdown — the original delegates this to `setup-matt-pocock-skills`), and to call this repo's `/grill-me` in place of `/grilling`. The tracker docs under `trackers/` are derived from the same repo's `issue-tracker-*.md`. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
+- [`research`](skills/research/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/engineering/research/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md). Licensed under MIT; adapted with Ukrainian triggers and a `wayfinder` hand-off section. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
+- [`prototype`](skills/prototype/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/engineering/prototype/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md). Licensed under MIT; adapted with Ukrainian triggers, Gradle/Compose notes, and a `wayfinder` hand-off section. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
+- [`domain-modeling`](skills/domain-modeling/SKILL.md) — created by **Matt Pocock** ([@mattpocock](https://github.com/mattpocock)). Source: [mattpocock/skills · skills/engineering/domain-modeling/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md). Licensed under MIT; adapted with Ukrainian triggers, a Notion-documentation mirroring note, and a `wayfinder` hand-off section. Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
 - [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review/SKILL.md) — created by **Cursor** ([@cursor](https://github.com/cursor)). Source: [cursor/plugins · cursor-team-kit/skills/thermo-nuclear-code-quality-review/SKILL.md](https://github.com/cursor/plugins/blob/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review/SKILL.md). Licensed under MIT; adapted here only to deliver the review report in Ukrainian (see the `## Language` section in its `SKILL.md`). Full license text in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
 
 ## Install
