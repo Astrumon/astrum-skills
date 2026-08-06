@@ -18,11 +18,6 @@ Its job:
 3. Save it where the repo already keeps such notes; match the existing convention, and if there is
    none, put it somewhere sensible and say where.
 
-## Language
-
-Report to the user in Ukrainian. The findings file itself follows the language the repo's existing
-notes use — quoted material and source titles always stay in their original language.
-
 ## When `/wayfinder` calls this
 
 A `wayfinder:research` ticket is resolved by one of these subagents. Two extra obligations:
@@ -31,3 +26,9 @@ A `wayfinder:research` ticket is resolved by one of these subagents. Two extra o
   name + file path) on the ticket, rather than committing notes to the working branch.
 - The resolution comment carries the **answer to the ticket's question**, not the whole file — the
   file is the asset, linked, not pasted.
+
+## Language
+
+Communicate with the user exclusively in Ukrainian. The findings file itself follows the language
+the repo's existing notes use — quoted material and source titles always stay in their original
+language.

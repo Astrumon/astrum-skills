@@ -4,20 +4,13 @@ description: >
   Plan a huge chunk of work — more than one agent session can hold — as a shared map of
   decision tickets on the project's issue tracker (Notion, GitHub Issues, or local markdown),
   and resolve them one at a time until the way to the destination is clear. Invoke explicitly
-  with /wayfinder. Triggers on: "wayfinder", "чарт мапу", "розбий велику задачу на рішення",
-  "прокладемо шлях", "chart the map", "work through the map".
+  with /wayfinder.
 disable-model-invocation: true
 ---
 
 A loose idea has arrived — too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the project's issue tracker, then works its **decision tickets** — questions whose resolution is a decision, not slices of a build to execute — one at a time until the route is clear.
 
 The destination varies per effort, and naming it is the first act of charting — it shapes every ticket. It might be a spec to hand off and iterate on, a decision to lock before planning starts, or a change made in place like a data-structure migration. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
-
-## Language
-
-Communicate with the user exclusively in Ukrainian — narration, questions, and the report at the end of the session.
-
-**Tracker artifacts follow the project's own language.** Map bodies, ticket titles, and resolution comments are written in the language the project's existing tickets and docs use (Ukrainian for most spovishun projects). The section headings inside the map body (`## Destination`, `## Notes`, `## Decisions so far`, `## Not yet specified`, `## Out of scope`) and the `wayfinder:*` labels stay **in English** — they are machine-read keys, and every session queries them verbatim.
 
 ## Plan, don't do
 
@@ -96,7 +89,7 @@ Every ticket is either **HITL** — human in the loop, worked *with* a human who
 
 - **Research** (AFK): Reading documentation, third-party APIs, or local resources like knowledge bases to surface a fact a decision waits on. Resolved by a `/research` **subagent**. Use when knowledge outside the current working directory is required.
 - **Prototype** (HITL): Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to — an outline, a rough take, a stub, or UI/logic code via the `/prototype` skill. Links the prototype as an asset. Use when "how should it look" or "how should it behave" is the key question.
-- **Grilling** (HITL): Conversation via the `/grill-me` and `/domain-modeling` skills, one question at a time. The default case.
+- **Grilling** (HITL): Conversation via the `/grill-me` and `/domain-modeling` skills, worked in rounds. The default case.
 - **Task** (HITL or AFK): Manual work that must happen before a *decision* can be made — nothing to decide, prototype, or research, but the discussion is blocked until it's done. Signing up for a service so its API can be judged, provisioning access, moving data so its shape can be seen. This is the one type that *does* rather than decides — and it earns its place by unblocking a decision, not by delivering the destination. The agent drives it alone where it can (AFK); otherwise it hands the human a precise checklist (HITL). Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.
 
 ## Fog of war
@@ -147,3 +140,9 @@ User invokes with a map (URL, id, or path). A ticket is **optional** — without
 5. Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable, clearing each graduated patch from **Not yet specified** so it lives only as its new ticket. If the answer reveals a ticket — this one or another — sits beyond the destination, **rule it out of scope** rather than resolving it on the route. If the decision invalidates other parts of the map, update or delete those tickets.
 
 The user may run unblocked tickets in parallel, so expect other sessions to be editing the tracker concurrently.
+
+## Language
+
+Communicate with the user exclusively in Ukrainian — narration, questions, and the report at the end of the session.
+
+**Tracker artifacts follow the project's own language.** Map bodies, ticket titles, and resolution comments are written in the language the project's existing tickets and docs use (Ukrainian for most spovishun projects). The section headings inside the map body (`## Destination`, `## Notes`, `## Decisions so far`, `## Not yet specified`, `## Out of scope`) and the `wayfinder:*` labels stay **in English** — they are machine-read keys, and every session queries them verbatim.

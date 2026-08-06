@@ -12,13 +12,6 @@ description: >
 
 Actively build and sharpen the project's domain model as you design. This is the *active* discipline — challenging terms, inventing edge-case scenarios, and writing the glossary and decisions down the moment they crystallise. (Merely *reading* `CONTEXT.md` for vocabulary is not this skill — that's a one-line habit any skill can do. This skill is for when you're changing the model, not just consuming it.)
 
-## Language
-
-Talk to the user in Ukrainian. `CONTEXT.md` and ADR files follow the project's own documentation
-language, and **term names stay in the language the code uses** — a glossary that calls the class
-`Order` "Замовлення" and nothing else is useless when grepping. Where both are needed, write the
-canonical term as it appears in code and gloss it in prose.
-
 ## File structure
 
 Most repos have a single context:
@@ -99,3 +92,10 @@ Grilling tickets pair `/grill-me` with this skill: the grilling produces the dec
 makes sure the words it is phrased in mean one thing. Terms resolved mid-ticket land in
 `CONTEXT.md` immediately — not at the end of the map — because later tickets are written in that
 vocabulary.
+
+## Language
+
+Communicate with the user exclusively in Ukrainian. `CONTEXT.md` and ADR files follow the project's
+own documentation language, and **term names stay in the language the code uses** — a glossary that
+calls the class `Order` "Замовлення" and nothing else is useless when grepping. Where both are
+needed, write the canonical term as it appears in code and gloss it in prose.

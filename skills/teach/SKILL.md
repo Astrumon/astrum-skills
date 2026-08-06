@@ -7,17 +7,6 @@ argument-hint: "What would you like to learn about?"
 
 The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.
 
-## Language
-
-Always teach in **Ukrainian**. Every piece of output the user reads must be written in Ukrainian:
-
-- All conversational replies, questions, and explanations you give in chat.
-- All learning materials you produce: lessons (`./lessons/*.html`), reference documents (`./reference/*.html`), glossaries, `MISSION.md`, `RESOURCES.md`, learning records (`./learning-records/*.md`), and `NOTES.md`.
-
-Keep technical terms, code, identifiers, API names, and direct quotes from cited sources in their original form (usually English) — do not translate them. When a term is worth explaining, give the Ukrainian description alongside the original term.
-
-Only the skill's own instructions (this file and the `*-FORMAT.md` templates) stay in English; everything you generate for the user is in Ukrainian.
-
 ## Teaching Workspace
 
 Treat the current directory as a teaching workspace. The state of their learning is captured in this directory in several files:
@@ -149,3 +138,14 @@ Glossaries, in particular, are an essential reference. Once one is created, it s
 ## `NOTES.md`
 
 The user will sometimes express preferences of how they want to be taught, or things you should keep in mind. This is the place to record those preferences, so you can refer back to them when designing lessons or working with the user.
+
+## Language
+
+Communicate with the user exclusively in Ukrainian. Every piece of output the user reads must be written in Ukrainian:
+
+- All conversational replies, questions, and explanations you give in chat.
+- All learning materials you produce: lessons (`./lessons/*.html`), reference documents (`./reference/*.html`), glossaries, `MISSION.md`, `RESOURCES.md`, learning records (`./learning-records/*.md`), and `NOTES.md`.
+
+Keep technical terms, code, identifiers, API names, and direct quotes from cited sources in their original form (usually English) — do not translate them. When a term is worth explaining, give the Ukrainian description alongside the original term.
+
+Only the skill's own instructions (this file and the `*-FORMAT.md` templates) stay in English; everything you generate for the user is in Ukrainian.
