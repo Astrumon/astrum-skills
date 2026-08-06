@@ -3,12 +3,18 @@
 This repository bundles skills authored by others. Their original license terms
 are reproduced below, as required.
 
-## grill-me
+## grill-me, wait-what
 
-- **Skill:** [`skills/grill-me/`](skills/grill-me/SKILL.md)
+- **Skills:**
+  - [`skills/grill-me/`](skills/grill-me/SKILL.md) — sources:
+    https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md and
+    https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md
+  - [`skills/wait-what/`](skills/wait-what/SKILL.md) — source: https://github.com/mattpocock/skills/blob/main/skills/productivity/wait-what/SKILL.md
 - **Author:** Matt Pocock ([@mattpocock](https://github.com/mattpocock))
-- **Source:** https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md
-- **Note:** Adapted only to respond in Ukrainian; the instruction set is otherwise unchanged.
+- **Note:** Upstream `grill-me` is a wrapper that runs the author's `grilling` skill; here the
+  `grilling` body is inlined into `grill-me` and adapted to respond in Ukrainian. `wait-what` asks
+  for plain technical Ukrainian in place of ASD-STE100 Simplified Technical English. The
+  instruction sets are otherwise unchanged.
 
 ```
 MIT License
@@ -81,8 +87,10 @@ Four skills from the same author, under one license block.
 - **Note:** Adapted to communicate in Ukrainian; `wayfinder` additionally resolves the issue
   tracker itself (Notion / GitHub Issues / local markdown) instead of relying on the author's
   `setup-matt-pocock-skills`, and calls this repo's `/grill-me` in place of `/grilling`.
-  `prototype` gained Gradle/Compose guidance and `domain-modeling` a Notion-mirroring note.
-  The instruction sets are otherwise substantially unchanged.
+  `prototype` gained Clean Architecture guidance plus Compose/Android and Kotlin/KMP sections, and
+  `domain-modeling` a Notion-mirroring note. The instruction sets are otherwise substantially
+  unchanged. Per-skill deltas and the upstream commit each copy is pinned to are recorded in
+  [UPSTREAM.md](UPSTREAM.md).
 
 ```
 MIT License
