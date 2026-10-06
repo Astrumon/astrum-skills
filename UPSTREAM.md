@@ -19,6 +19,8 @@ For attribution and licensing see [Credits](README.md#credits) and
 | [`research`](skills/research/SKILL.md) | `mattpocock/skills` · `skills/engineering/research` | 1.2.3 | `6acc160` | 2026-08-06 |
 | [`prototype`](skills/prototype/SKILL.md) | `mattpocock/skills` · `skills/engineering/prototype` | 1.2.3 | `6acc160` | 2026-08-06 |
 | [`domain-modeling`](skills/domain-modeling/SKILL.md) | `mattpocock/skills` · `skills/engineering/domain-modeling` | 1.2.3 | `6acc160` | 2026-08-06 |
+| [`retro`](skills/retro/SKILL.md) | `mattpocock/skills` · `skills/engineering/retro` | 1.3.1 | `6fd9479` | 2026-10-06 |
+| [`writing-for-agents`](skills/writing-for-agents/SKILL.md) | `mattpocock/skills` · `skills/productivity/writing-for-agents` | 1.3.1 | `6fd9479` | 2026-10-06 |
 | [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review/SKILL.md) | `cursor/plugins` · `cursor-team-kit/skills/thermo-nuclear-code-quality-review` | — | `6e3d2ea` | 2026-07-19 |
 
 `cursor/plugins` has no release versioning, so the commit is the only pin.
@@ -50,6 +52,8 @@ These are re-applied on every sync. Everything **not** listed here should match 
 | `research` | `## When /wayfinder calls this` hand-off section. |
 | `domain-modeling` | `## Notion-documented projects` (offer to mirror an accepted ADR onto the Notion Architecture page) and `## When /wayfinder calls this`. |
 | `teach` | `## Language` only. |
+| `retro` | `## Language` only. Depends on `writing-for-agents` (step 1 invokes it), so the two are vendored and synced together. |
+| `writing-for-agents` | `## Language` only. |
 | `thermo-nuclear-code-quality-review` | `## Language` only. |
 
 ## How to sync

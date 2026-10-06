@@ -71,9 +71,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## wayfinder, research, prototype, domain-modeling
+## wayfinder, research, prototype, domain-modeling, retro, writing-for-agents
 
-Four skills from the same author, under one license block.
+Six skills from the same author, under one license block.
 
 - **Skills:**
   - [`skills/wayfinder/`](skills/wayfinder/SKILL.md) — source: https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md
@@ -83,6 +83,8 @@ Four skills from the same author, under one license block.
   - [`skills/research/`](skills/research/SKILL.md) — source: https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md
   - [`skills/prototype/`](skills/prototype/SKILL.md) — source: https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype
   - [`skills/domain-modeling/`](skills/domain-modeling/SKILL.md) — source: https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling
+  - [`skills/retro/`](skills/retro/SKILL.md) — source: https://github.com/mattpocock/skills/blob/main/skills/engineering/retro/SKILL.md
+  - [`skills/writing-for-agents/`](skills/writing-for-agents/SKILL.md) — source: https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents
 - **Author:** Matt Pocock ([@mattpocock](https://github.com/mattpocock))
 - **Note:** Adapted to communicate in Ukrainian; `wayfinder` additionally resolves the issue
   tracker itself (Notion / GitHub Issues / local markdown) instead of relying on the author's
